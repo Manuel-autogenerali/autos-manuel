@@ -23,7 +23,32 @@
       --white: #fffaf1;
       --line: #d7cbb5;
     }
+.hero-brand {
+  text-align: center;
+}
 
+.brand-name {
+  display: block;
+  font-size: 16px;
+  letter-spacing: 4px;
+  font-weight: 600;
+}
+
+.hero-brand h1 {
+  font-size: clamp(30px, 5vw, 52px);
+  margin: 12px 0;
+}
+
+.hero-brand h2 {
+  font-size: clamp(23px, 3.5vw, 38px);
+  margin: 8px 0;
+}
+
+.hero-brand p {
+  font-size: clamp(19px, 2.5vw, 28px);
+  font-weight: 700;
+  margin-top: 16px;
+}
     * {
       box-sizing: border-box;
       margin: 0;
@@ -490,10 +515,12 @@
 
   <main>
     <section class="hero" id="inicio">
-      <div class="container">
-        <div class="eyebrow">Automobili · Selezione italiana</div>
-        <h1>UNA SCELTA DI STILE.<br>IL TUO PROSSIMO FIAT.</h1>
-        <p>
+      <div class="hero-brand">
+  <span class="brand-name">FIAT AUTOGENERALI</span>
+  <h1>PRECIOS TRANSPARENTES</h1>
+  <h2>SEGURIDAD GARANTIZADA</h2>
+  <p>VENDEMOS AUTOS, NO PROBLEMAS.</p>
+</div>
           Una forma diferente de elegir tu próximo 0 km.
           Conocé el precio, los gastos y el total puesto en calle
           desde el primer momento.
