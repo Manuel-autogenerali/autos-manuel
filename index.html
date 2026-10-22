@@ -4,19 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#101010">
-  <meta name="description" content="Manuel Bossi Autos. Precios de Fiat 0 km, gastos y financiación.">
-  <title>Manuel Bossi Autos | Fiat 0 km</title>
+  <meta name="theme-color" content="#25271d">
+  <meta name="description" content="Manuel Bossi Autos. Fiat 0 km, precios, gastos y total puesto en calle.">
+  <title>Manuel Bossi Autos | Selezione Italiana</title>
 
   <style>
     :root {
-      --bg: #101010;
-      --surface: #1a1a1a;
-      --surface2: #242424;
-      --text: #f5f5f5;
-      --muted: #b4b4b4;
-      --accent: #d7ad59;
-      --border: #343434;
+      --forest: #292c21;
+      --forest-light: #3b4030;
+      --wood: #62442f;
+      --wood-dark: #39291e;
+      --cream: #f4eddf;
+      --paper: #e9dfcb;
+      --bronze: #b38a52;
+      --olive: #777b56;
+      --text: #29281f;
+      --muted: #777467;
+      --white: #fffaf1;
+      --line: #d7cbb5;
     }
 
     * {
@@ -29,7 +34,7 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
+      background: var(--cream);
       color: var(--text);
       line-height: 1.5;
     }
@@ -39,334 +44,439 @@
     button { font: inherit; cursor: pointer; }
 
     .container {
-      width: min(1120px, 92%);
+      width: min(1160px, 92%);
       margin: 0 auto;
     }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(16,16,16,.97);
-      border-bottom: 1px solid var(--border);
+      background: var(--forest);
+      color: var(--cream);
+      border-bottom: 3px solid var(--bronze);
     }
 
     .nav {
-      min-height: 76px;
+      min-height: 78px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 20px;
     }
 
     .brand {
-      color: var(--text);
-      font-size: 20px;
+      color: var(--white);
+      font-size: 19px;
       font-weight: 800;
-      letter-spacing: 1px;
+      letter-spacing: 1.7px;
     }
 
-    .brand span { color: var(--accent); }
+    .brand span { color: #d6b67f; }
 
     .nav-links {
       display: flex;
+      gap: 25px;
       flex-wrap: wrap;
-      gap: 22px;
-      font-size: 14px;
     }
 
-    .nav-links a { color: var(--muted); }
-    .nav-links a:hover { color: var(--accent); }
+    .nav-links a {
+      color: #e2d8c5;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav-links a:hover { color: #e5bd78; }
 
     .hero {
-      padding: 90px 0 80px;
+      color: var(--cream);
+      padding: 100px 0 95px;
       background:
-        radial-gradient(ellipse at 80% 15%, rgba(215,173,89,.14), transparent 40%),
-        linear-gradient(135deg, #151515, #101010 70%);
-      border-bottom: 1px solid var(--border);
+        linear-gradient(90deg, rgba(35,38,28,.98), rgba(35,38,28,.87) 55%, rgba(35,38,28,.56)),
+        repeating-linear-gradient(
+          95deg,
+          #493626 0px,
+          #493626 3px,
+          #543d2a 4px,
+          #493626 9px,
+          #61452e 12px
+        );
+      border-bottom: 5px solid var(--bronze);
     }
 
     .eyebrow {
-      color: var(--accent);
+      color: #d4b47b;
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 3px;
       font-weight: 700;
-      font-size: 12px;
-      margin-bottom: 18px;
+      margin-bottom: 17px;
     }
 
     h1 {
-      max-width: 780px;
-      font-size: clamp(36px, 6vw, 68px);
-      line-height: 1.05;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      font-size: clamp(39px, 6vw, 70px);
+      line-height: 1.03;
+      max-width: 850px;
       margin-bottom: 22px;
     }
 
     .hero p {
-      color: var(--muted);
-      max-width: 600px;
-      font-size: 17px;
+      max-width: 590px;
+      color: #e0d7c6;
+      font-size: 16px;
       margin-bottom: 30px;
+    }
+
+    .hero-note {
+      color: #d4b47b;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 32px;
     }
 
     .btn {
       display: inline-flex;
-      align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 13px 16px;
-      border-radius: 5px;
-      border: 1px solid var(--accent);
-      font-weight: 700;
-      font-size: 12px;
+      align-items: center;
+      padding: 14px 20px;
+      border: 1px solid var(--bronze);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      letter-spacing: .4px;
-      transition: .2s;
+      transition: .2s ease;
+      text-align: center;
     }
 
-    .btn-primary {
-      background: var(--accent);
-      color: #151515;
+    .btn-gold {
+      background: var(--bronze);
+      color: #211c15;
     }
 
-    .btn-primary:hover { background: #edc777; }
-
-    .btn-outline {
-      color: var(--accent);
-      background: transparent;
+    .btn-gold:hover {
+      background: #d0ac72;
+      border-color: #d0ac72;
     }
 
-    .btn-outline:hover { background: rgba(215,173,89,.1); }
+    .btn-dark {
+      color: var(--cream);
+      background: var(--forest);
+      border-color: var(--forest);
+    }
 
-    section { padding: 70px 0; }
+    .btn-dark:hover { background: var(--wood-dark); }
 
-    .section-heading { margin-bottom: 30px; }
+    .catalog-section {
+      padding: 75px 0 85px;
+      background:
+        radial-gradient(ellipse at 15% 5%, rgba(179,138,82,.10), transparent 38%),
+        var(--cream);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .section-heading .eyebrow { color: var(--olive); }
 
     .section-heading h2 {
-      font-size: clamp(28px, 4vw, 40px);
-      margin-bottom: 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(32px, 4vw, 46px);
+      font-weight: 500;
+      line-height: 1.1;
     }
 
-    .section-heading p { color: var(--muted); }
+    .section-heading p {
+      max-width: 350px;
+      color: var(--muted);
+      font-size: 13px;
+    }
 
     .catalog {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
+      gap: 23px;
     }
 
     .car-card {
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      background: var(--surface);
+      background: var(--white);
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 25px rgba(57,41,30,.07);
       display: flex;
       flex-direction: column;
+      min-width: 0;
+      transition: transform .25s, box-shadow .25s;
     }
 
-    .car-visual {
-      min-height: 145px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .car-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 32px rgba(57,41,30,.13);
+    }
+
+    .car-top {
+      position: relative;
+      min-height: 160px;
       padding: 25px;
-      background:
-        radial-gradient(ellipse at center, rgba(215,173,89,.14), transparent 65%),
-        var(--surface2);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .car-visual span {
-      color: var(--accent);
-      font-weight: 800;
-      font-size: 35px;
-      letter-spacing: 2px;
-    }
-
-    .car-content {
-      padding: 22px;
       display: flex;
-      flex: 1;
       flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      color: var(--cream);
+      background:
+        linear-gradient(120deg, rgba(35,38,28,.96), rgba(69,48,33,.96)),
+        var(--wood);
     }
 
-    .tag {
-      color: var(--accent);
-      font-size: 11px;
-      font-weight: 700;
+    .car-top::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .18;
+      background: repeating-linear-gradient(
+        8deg,
+        transparent 0px,
+        transparent 8px,
+        #d2b17b 9px,
+        transparent 11px,
+        transparent 19px
+      );
+      pointer-events: none;
+    }
+
+    .car-top > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .model-tag {
+      font-size: 10px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 8px;
+      color: #d5b57d;
     }
 
-    .car-card h3 {
-      font-size: 24px;
-      margin-bottom: 4px;
+    .model-name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 37px;
+      line-height: 1;
+      font-weight: 500;
+      margin-top: 23px;
     }
 
-    .version {
-      color: var(--muted);
-      font-size: 14px;
-      min-height: 22px;
-      margin-bottom: 17px;
-    }
-
-    .price-label {
-      color: var(--muted);
+    .model-edition {
+      color: #e2d7c5;
       font-size: 12px;
-      text-transform: uppercase;
+      margin-top: 7px;
       letter-spacing: 1px;
     }
 
-    .price {
-      color: var(--accent);
-      font-size: clamp(21px, 2.2vw, 27px);
-      font-weight: 800;
-      margin: 3px 0 20px;
+    .car-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 23px;
+    }
+
+    .version-label {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      margin-bottom: 17px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding: 11px 0;
+      border-bottom: 1px solid #e8dece;
+    }
+
+    .price-row span {
+      color: #6e6a5c;
+      font-size: 12px;
+    }
+
+    .price-row strong {
+      font-size: 14px;
+      font-weight: 700;
+      text-align: right;
       white-space: nowrap;
     }
 
+    .street-price {
+      margin: 20px 0 20px;
+      padding: 18px;
+      background: var(--forest);
+      color: var(--cream);
+      border-left: 4px solid var(--bronze);
+    }
+
+    .street-price .label {
+      color: #d5c9b5;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .street-price strong {
+      display: block;
+      color: #e4c48b;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(23px, 2.1vw, 29px);
+      font-weight: 600;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .street-price small {
+      display: block;
+      margin-top: 7px;
+      color: #d5c9b5;
+      font-size: 10px;
+    }
+
     .card-actions {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
       margin-top: auto;
+      display: grid;
+      gap: 9px;
     }
 
     .card-actions .btn { width: 100%; }
 
-    .finance {
-      background: #171717;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+    .finance-section {
+      padding: 75px 0;
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .finance-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 4vw, 42px);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .finance-intro {
+      max-width: 660px;
+      color: var(--muted);
+      margin-bottom: 30px;
     }
 
     .info-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
-      margin-top: 30px;
     }
 
     .info-card {
-      padding: 24px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      border-radius: 8px;
+      padding: 25px;
+      background: rgba(255,250,241,.72);
+      border: 1px solid #d3c4a9;
+      border-top: 3px solid var(--olive);
     }
 
-    .info-card h3 { margin-bottom: 10px; }
-    .info-card p { color: var(--muted); font-size: 14px; }
+    .info-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .info-card p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .contact-section {
+      padding: 75px 0;
+      background: var(--forest);
+      color: var(--cream);
+    }
 
     .contact-panel {
-      padding: 34px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 9px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 30px;
     }
 
     .contact-panel h2 {
-      margin-bottom: 8px;
-      font-size: clamp(25px, 4vw, 36px);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 4vw, 45px);
+      line-height: 1.1;
+      font-weight: 500;
+      margin-bottom: 13px;
     }
 
-    .contact-panel p { color: var(--muted); }
+    .contact-panel p {
+      color: #d5cdbd;
+      font-size: 14px;
+    }
 
     footer {
-      border-top: 1px solid var(--border);
-      padding: 25px 0;
-      color: var(--muted);
-      font-size: 12px;
+      background: #1e2019;
+      color: #c8c0b0;
+      padding: 23px 0;
+      font-size: 11px;
     }
 
     .footer-inner {
       display: flex;
       justify-content: space-between;
-      gap: 15px;
       flex-wrap: wrap;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background: rgba(0,0,0,.78);
-    }
-
-    .modal.open { display: flex; }
-
-    .modal-box {
-      width: min(390px, 100%);
-      padding: 28px;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      background: #1a1a1a;
-      box-shadow: 0 15px 60px rgba(0,0,0,.45);
-    }
-
-    .modal-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       gap: 12px;
-      margin-bottom: 22px;
     }
 
-    .modal-top h3 { font-size: 21px; }
-
-    .close-modal {
-      border: 0;
-      background: transparent;
-      color: var(--muted);
-      font-size: 28px;
-      line-height: 1;
-    }
-
-    .modal-model {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-
-    .expense-total {
-      color: var(--accent);
-      font-size: 29px;
+    .footer-brand {
       font-weight: 800;
-      margin-bottom: 22px;
+      letter-spacing: 1.5px;
+      color: var(--cream);
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 950px) {
       .catalog { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .info-grid { grid-template-columns: 1fr; }
+      .section-heading { align-items: flex-start; flex-direction: column; }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 620px) {
       .nav {
+        padding: 18px 0;
         align-items: flex-start;
         flex-direction: column;
-        justify-content: center;
-        padding: 17px 0;
       }
 
-      .nav-links { gap: 13px; font-size: 12px; }
-      .hero { padding: 65px 0; }
+      .nav-links { gap: 15px; }
+
+      .hero { padding: 72px 0; }
+
       .catalog { grid-template-columns: 1fr; }
+
+      .car-top { min-height: 145px; }
+
+      .car-content { padding: 20px; }
+
+      .street-price strong { font-size: 28px; }
 
       .contact-panel {
         align-items: flex-start;
         flex-direction: column;
-        padding: 25px;
       }
 
-      .price { font-size: 27px; }
+      .contact-panel .btn { width: 100%; }
+
+      .footer-inner { flex-direction: column; }
     }
   </style>
 </head>
@@ -386,40 +496,59 @@
   <main>
     <section class="hero" id="inicio">
       <div class="container">
-        <div class="eyebrow">Fiat 0 km · Venta convencional</div>
-        <h1>PRECIOS CLAROS.<br>EL PRÓXIMO AUTO, MÁS CERCA.</h1>
+        <div class="eyebrow">Automobili · Selezione italiana</div>
+        <h1>UNA SCELTA DI STILE.<br>IL TUO PROSSIMO FIAT.</h1>
         <p>
-          Consultá los modelos, revisá los gastos y escribime para
-          negociar el precio de tu próximo Fiat 0 km.
+          Una forma diferente de elegir tu próximo 0 km.
+          Conocé el precio, los gastos y el total puesto en calle
+          desde el primer momento.
         </p>
-        <a class="btn btn-primary" href="#vehiculos">VER VEHÍCULOS</a>
+        <a class="btn btn-gold" href="#vehiculos">EXPLORAR MODELOS</a>
+        <div class="hero-note">Atención personalizada · Venta convencional</div>
       </div>
     </section>
 
-    <section id="vehiculos">
+    <section class="catalog-section" id="vehiculos">
       <div class="container">
         <div class="section-heading">
-          <div class="eyebrow">Catálogo actualizado</div>
-          <h2>FIAT 0 KM</h2>
-          <p>Consultá el precio y los gastos de cada versión.</p>
+          <div>
+            <div class="eyebrow">La selezione</div>
+            <h2>Modelos destacados</h2>
+          </div>
+          <p>Todos los importes a la vista. Elegí tu modelo y consultame para negociar tu mejor propuesta.</p>
         </div>
 
         <div class="catalog">
+          <!-- FIAT CRONOS -->
           <article class="car-card">
-            <div class="car-visual"><span>CRONOS</span></div>
+            <div class="car-top">
+              <div class="model-tag">Fiat · Berlina</div>
+              <div>
+                <div class="model-name">Cronos</div>
+                <div class="model-edition">LIKE</div>
+              </div>
+            </div>
             <div class="car-content">
-              <div class="tag">Fiat · 0 km</div>
-              <h3>Fiat Cronos</h3>
-              <p class="version">Like</p>
-              <div class="price-label">Precio del vehículo</div>
-              <div class="price">$ 29.865.124</div>
+              <div class="version-label">Versión Like · 0 km</div>
+
+              <div class="price-row">
+                <span>Precio del vehículo</span>
+                <strong>$ 29.865.124</strong>
+              </div>
+              <div class="price-row">
+                <span>Gastos</span>
+                <strong>$ 3.616.050</strong>
+              </div>
+
+              <div class="street-price">
+                <span class="label">Total puesto en calle</span>
+                <strong>$ 33.481.174</strong>
+                <small>Precio + gastos informados</small>
+              </div>
+
               <div class="card-actions">
-                <button class="btn btn-outline" type="button"
-                  data-model="Fiat Cronos Like"
-                  data-expenses="$ 3.616.050"
-                  onclick="showExpenses(this)">GASTOS</button>
-                <a class="btn btn-primary"
-                  href="https://wa.me/5491168347348?text=Hola%2C%20quiero%20negociar%20el%20precio%20del%20Fiat%20Cronos%20Like.%20%C2%BFQu%C3%A9%20propuesta%20me%20pod%C3%A9s%20ofrecer%3F"
+                <a class="btn btn-dark"
+                  href="https://wa.me/5491168347348?text=Hola%2C%20quiero%20negociar%20el%20precio%20del%20Fiat%20Cronos%20Like.%20El%20total%20publicado%20puesto%20en%20calle%20es%20%2433.481.174.%20%C2%BFQu%C3%A9%20propuesta%20me%20pod%C3%A9s%20ofrecer%3F"
                   target="_blank" rel="noopener noreferrer">
                   NEGOCIAR PRECIO
                 </a>
@@ -427,21 +556,36 @@
             </div>
           </article>
 
+          <!-- FIAT ARGO -->
           <article class="car-card">
-            <div class="car-visual"><span>ARGO</span></div>
+            <div class="car-top">
+              <div class="model-tag">Fiat · Hatchback</div>
+              <div>
+                <div class="model-name">Argo</div>
+                <div class="model-edition">DRIVE MT</div>
+              </div>
+            </div>
             <div class="car-content">
-              <div class="tag">Fiat · 0 km</div>
-              <h3>Fiat Argo</h3>
-              <p class="version">Drive MT</p>
-              <div class="price-label">Precio del vehículo</div>
-              <div class="price">$ 27.150.336</div>
+              <div class="version-label">Versión Drive MT · 0 km</div>
+
+              <div class="price-row">
+                <span>Precio del vehículo</span>
+                <strong>$ 27.150.336</strong>
+              </div>
+              <div class="price-row">
+                <span>Gastos</span>
+                <strong>$ 3.507.962</strong>
+              </div>
+
+              <div class="street-price">
+                <span class="label">Total puesto en calle</span>
+                <strong>$ 30.658.298</strong>
+                <small>Precio + gastos informados</small>
+              </div>
+
               <div class="card-actions">
-                <button class="btn btn-outline" type="button"
-                  data-model="Fiat Argo Drive MT"
-                  data-expenses="$ 3.507.962"
-                  onclick="showExpenses(this)">GASTOS</button>
-                <a class="btn btn-primary"
-                  href="https://wa.me/5491168347348?text=Hola%2C%20quiero%20negociar%20el%20precio%20del%20Fiat%20Argo%20Drive%20MT.%20%C2%BFQu%C3%A9%20propuesta%20me%20pod%C3%A9s%20ofrecer%3F"
+                <a class="btn btn-dark"
+                  href="https://wa.me/5491168347348?text=Hola%2C%20quiero%20negociar%20el%20precio%20del%20Fiat%20Argo%20Drive%20MT.%20El%20total%20publicado%20puesto%20en%20calle%20es%20%2430.658.298.%20%C2%BFQu%C3%A9%20propuesta%20me%20pod%C3%A9s%20ofrecer%3F"
                   target="_blank" rel="noopener noreferrer">
                   NEGOCIAR PRECIO
                 </a>
@@ -449,21 +593,36 @@
             </div>
           </article>
 
+          <!-- FIAT PULSE -->
           <article class="car-card">
-            <div class="car-visual"><span>PULSE</span></div>
+            <div class="car-top">
+              <div class="model-tag">Fiat · SUV</div>
+              <div>
+                <div class="model-name">Pulse</div>
+                <div class="model-edition">DRIVE MT</div>
+              </div>
+            </div>
             <div class="car-content">
-              <div class="tag">Fiat · 0 km</div>
-              <h3>Fiat Pulse</h3>
-              <p class="version">Drive MT</p>
-              <div class="price-label">Precio del vehículo</div>
-              <div class="price">$ 31.390.350</div>
+              <div class="version-label">Versión Drive MT · 0 km</div>
+
+              <div class="price-row">
+                <span>Precio del vehículo</span>
+                <strong>$ 31.390.350</strong>
+              </div>
+              <div class="price-row">
+                <span>Gastos</span>
+                <strong>$ 4.281.982</strong>
+              </div>
+
+              <div class="street-price">
+                <span class="label">Total puesto en calle</span>
+                <strong>$ 35.672.332</strong>
+                <small>Precio + gastos informados</small>
+              </div>
+
               <div class="card-actions">
-                <button class="btn btn-outline" type="button"
-                  data-model="Fiat Pulse Drive MT"
-                  data-expenses="$ 4.281.982"
-                  onclick="showExpenses(this)">GASTOS</button>
-                <a class="btn btn-primary"
-                  href="https://wa.me/5491168347348?text=Hola%2C%20quiero%20negociar%20el%20precio%20del%20Fiat%20Pulse%20Drive%20MT.%20%C2%BFQu%C3%A9%20propuesta%20me%20pod%C3%A9s%20ofrecer%3F"
+                <a class="btn btn-dark"
+                  href="https://wa.me/5491168347348?text=Hola%2C%20quiero%20negociar%20el%20precio%20del%20Fiat%20Pulse%20Drive%20MT.%20El%20total%20publicado%20puesto%20en%20calle%20es%20%2435.672.332.%20%C2%BFQu%C3%A9%20propuesta%20me%20pod%C3%A9s%20ofrecer%3F"
                   target="_blank" rel="noopener noreferrer">
                   NEGOCIAR PRECIO
                 </a>
@@ -474,100 +633,53 @@
       </div>
     </section>
 
-    <section class="finance" id="financiacion">
+    <section class="finance-section" id="financiacion">
       <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow">Opciones de compra</div>
-          <h2>FINANCIACIÓN</h2>
-          <p>Consultá las alternativas vigentes para comprar tu 0 km.</p>
-        </div>
+        <div class="eyebrow">Soluzioni su misura</div>
+        <h2 class="finance-title">Tu operación, a tu manera.</h2>
+        <p class="finance-intro">
+          Consultá alternativas de financiación para tu próximo Fiat.
+          Cada operación se evalúa según el vehículo y las condiciones vigentes.
+        </p>
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Financiación a medida</h3>
-            <p>Consultá opciones según el vehículo y el monto que quieras financiar.</p>
+            <h3>Financiación</h3>
+            <p>Consultá opciones disponibles y encontrá una alternativa acorde a tu operación.</p>
           </div>
           <div class="info-card">
-            <h3>Compra convencional</h3>
-            <p>Asesoramiento para comprar tu vehículo 0 km sin plan de ahorro.</p>
+            <h3>Venta convencional</h3>
+            <p>Asesoramiento personalizado para comprar tu 0 km sin plan de ahorro.</p>
           </div>
           <div class="info-card">
-            <h3>Consultá tu caso</h3>
-            <p>Escribime para conocer condiciones, requisitos y alternativas disponibles.</p>
+            <h3>Negociación personalizada</h3>
+            <p>Escribime para evaluar tu propuesta y conversar sobre el precio.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contacto">
-      <div class="container">
-        <div class="contact-panel">
-          <div>
-            <div class="eyebrow">Atención personalizada</div>
-            <h2>NEGOCIEMOS TU PRÓXIMO FIAT</h2>
-            <p>Consultame por precios y opciones de financiación.</p>
-          </div>
-          <a class="btn btn-primary"
-            href="https://wa.me/5491168347348?text=Hola%2C%20quiero%20negociar%20el%20precio%20de%20un%20Fiat%200%20km."
-            target="_blank" rel="noopener noreferrer">
-            HABLAR POR WHATSAPP
-          </a>
+    <section class="contact-section" id="contacto">
+      <div class="container contact-panel">
+        <div>
+          <div class="eyebrow">Parliamone</div>
+          <h2>El próximo paso<br>lo damos juntos.</h2>
+          <p>Contame qué modelo te interesa y conversemos sobre tu propuesta.</p>
         </div>
+        <a class="btn btn-gold"
+          href="https://wa.me/5491168347348?text=Hola%2C%20vi%20tu%20cat%C3%A1logo%20de%20Fiat%200%20km%20y%20quiero%20conversar%20sobre%20una%20propuesta."
+          target="_blank" rel="noopener noreferrer">
+          NEGOCIAR POR WHATSAPP
+        </a>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="container footer-inner">
-      <span>MANUEL BOSSI AUTOS</span>
-      <span>Precios y condiciones sujetos a confirmación al momento de la consulta.</span>
+      <span class="footer-brand">MANUEL BOSSI AUTOS</span>
+      <span>Precios y condiciones sujetos a confirmación al momento de la operación.</span>
     </div>
   </footer>
-
-  <div class="modal" id="expensesModal" role="dialog"
-    aria-modal="true" aria-labelledby="modalTitle"
-    onclick="closeExpensesOnBackdrop(event)">
-    <div class="modal-box">
-      <div class="modal-top">
-        <h3 id="modalTitle">GASTOS</h3>
-        <button class="close-modal" type="button"
-          aria-label="Cerrar" onclick="closeExpenses()">&times;</button>
-      </div>
-      <p class="modal-model" id="expenseModel"></p>
-      <div class="expense-total" id="expenseTotal"></div>
-      <button class="btn btn-primary" type="button"
-        onclick="closeExpenses()">CERRAR</button>
-    </div>
-  </div>
-
-  <script>
-    function showExpenses(button) {
-      document.getElementById("expenseModel").textContent =
-        button.dataset.model;
-
-      document.getElementById("expenseTotal").textContent =
-        button.dataset.expenses;
-
-      document.getElementById("expensesModal").classList.add("open");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeExpenses() {
-      document.getElementById("expensesModal").classList.remove("open");
-      document.body.style.overflow = "";
-    }
-
-    function closeExpensesOnBackdrop(event) {
-      if (event.target.id === "expensesModal") {
-        closeExpenses();
-      }
-    }
-
-    document.addEventListener("keydown", function(event) {
-      if (event.key === "Escape") {
-        closeExpenses();
-      }
-    });
-  </script>
 </body>
 </html>
