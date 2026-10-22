@@ -5,15 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#292c21">
-  <meta name="description" content="Manuel Bossi Autos. Fiat 0 km, precios, gastos y total puesto en calle.">
-  <title>Manuel Bossi Autos | Selezione Italiana</title>
+  <meta name="description" content="Manuel Bossi Autos. Fiat 0 km, precios transparentes, gastos y total puesto en calle.">
+  <title>Manuel Bossi Autos | Fiat Autogenerali</title>
 
   <style>
     :root {
       --forest: #292c21;
       --forest-light: #3b4030;
       --wood: #62442f;
-      --wood-dark: #39291e;
       --cream: #f4eddf;
       --paper: #e9dfcb;
       --bronze: #b38a52;
@@ -23,39 +22,16 @@
       --white: #fffaf1;
       --line: #d7cbb5;
     }
-.hero-brand {
-  text-align: center;
-}
 
-.brand-name {
-  display: block;
-  font-size: 16px;
-  letter-spacing: 4px;
-  font-weight: 600;
-}
-
-.hero-brand h1 {
-  font-size: clamp(30px, 5vw, 52px);
-  margin: 12px 0;
-}
-
-.hero-brand h2 {
-  font-size: clamp(23px, 3.5vw, 38px);
-  margin: 8px 0;
-}
-
-.hero-brand p {
-  font-size: clamp(19px, 2.5vw, 28px);
-  font-weight: 700;
-  margin-top: 16px;
-}
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -64,21 +40,27 @@
       line-height: 1.5;
     }
 
-    a { text-decoration: none; }
+    a {
+      text-decoration: none;
+    }
 
     .container {
       width: min(1160px, 92%);
       margin: 0 auto;
     }
 
+    /* NAVEGACIÓN */
+
     header {
       background: var(--forest);
       color: var(--cream);
       border-bottom: 3px solid var(--bronze);
+      position: relative;
+      z-index: 5;
     }
 
     .nav {
-      min-height: 78px;
+      min-height: 76px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -87,12 +69,15 @@
 
     .brand {
       color: var(--white);
-      font-size: 19px;
+      font-size: 18px;
       font-weight: 800;
-      letter-spacing: 1.7px;
+      letter-spacing: 1.5px;
+      white-space: nowrap;
     }
 
-    .brand span { color: #d6b67f; }
+    .brand span {
+      color: #d6b67f;
+    }
 
     .nav-links {
       display: flex;
@@ -107,56 +92,95 @@
       letter-spacing: 1px;
     }
 
-    .nav-links a:hover { color: #e5bd78; }
+    .nav-links a:hover {
+      color: #e5bd78;
+    }
+
+    /* PORTADA CON PAISAJE ITALIANO */
 
     .hero {
       color: var(--cream);
-      padding: 100px 0 95px;
+      padding: 76px 0 66px;
       background:
-        linear-gradient(90deg, rgba(35,38,28,.96), rgba(35,38,28,.77)),
-        repeating-linear-gradient(
-          95deg,
-          #493626 0,
-          #493626 3px,
-          #543d2a 4px,
-          #493626 9px,
-          #61452e 12px
-        );
+        linear-gradient(
+          90deg,
+          rgba(28,31,23,.86),
+          rgba(28,31,23,.60)
+        ),
+        url("https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=2000&q=85")
+        center 54% / cover no-repeat;
       border-bottom: 5px solid var(--bronze);
     }
 
-    .eyebrow {
-      color: #d4b47b;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-weight: 700;
-      margin-bottom: 17px;
+    .hero-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
     }
 
-    h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 500;
-      font-size: clamp(39px, 6vw, 70px);
-      line-height: 1.03;
-      max-width: 850px;
+    .hero-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
       margin-bottom: 22px;
     }
 
-    .hero p {
-      max-width: 590px;
-      color: #e0d7c6;
+    .brand-name {
+      display: block;
+      color: #f0d29a;
+      font-size: 12px;
+      letter-spacing: 4px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .hero h1 {
+      max-width: 100%;
+      color: var(--white);
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 600;
+      font-size: clamp(34px, 5.2vw, 62px);
+      line-height: 1.04;
+      letter-spacing: .5px;
+      text-wrap: balance;
+    }
+
+    .hero h2 {
+      color: #f0d29a;
+      font-size: clamp(24px, 3.4vw, 40px);
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: .3px;
+      text-wrap: balance;
+    }
+
+    .hero-slogan {
+      color: var(--white);
+      font-size: clamp(18px, 2.2vw, 25px);
+      line-height: 1.3;
+      font-weight: 800;
+      letter-spacing: .5px;
+      margin-top: 5px;
+    }
+
+    .hero-description {
+      max-width: 760px;
+      margin: 0 auto 26px;
+      color: #f2eadb;
       font-size: 16px;
-      margin-bottom: 30px;
     }
 
     .hero-note {
-      color: #d4b47b;
+      color: #f0d29a;
       font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-top: 32px;
+      margin-top: 25px;
     }
+
+    /* BOTONES */
 
     .btn {
       display: inline-flex;
@@ -170,6 +194,7 @@
       text-transform: uppercase;
       transition: .2s ease;
       text-align: center;
+      cursor: pointer;
     }
 
     .btn-gold {
@@ -188,12 +213,20 @@
       border-color: var(--forest);
     }
 
-    .btn-dark:hover { background: var(--wood-dark); }
+    .btn-dark:hover {
+      background: #454a35;
+    }
+
+    /* CATÁLOGO */
 
     .catalog-section {
-      padding: 75px 0 85px;
+      padding: 72px 0 82px;
       background:
-        radial-gradient(ellipse at 15% 5%, rgba(179,138,82,.10), transparent 38%),
+        radial-gradient(
+          ellipse at 15% 5%,
+          rgba(179,138,82,.10),
+          transparent 38%
+        ),
         var(--cream);
     }
 
@@ -205,9 +238,17 @@
       margin-bottom: 32px;
     }
 
-    .section-heading .eyebrow { color: var(--olive); }
+    .eyebrow {
+      color: var(--olive);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
 
-    .section-heading h2 {
+    .section-heading h2,
+    .finance-title {
       font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(32px, 4vw, 46px);
       font-weight: 500;
@@ -215,7 +256,7 @@
     }
 
     .section-heading p {
-      max-width: 350px;
+      max-width: 370px;
       color: var(--muted);
       font-size: 13px;
     }
@@ -246,9 +287,12 @@
       position: relative;
       height: 230px;
       overflow: hidden;
-      background:
-        linear-gradient(180deg, rgba(244,237,223,.05), rgba(41,44,33,.22)),
-        linear-gradient(125deg, #dfceb0, #a49a7c 52%, #525943);
+      background: linear-gradient(
+        125deg,
+        #dfceb0,
+        #a49a7c 52%,
+        #525943
+      );
       border-bottom: 3px solid var(--bronze);
     }
 
@@ -348,7 +392,7 @@
       display: block;
       color: #e4c48b;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(22px, 2vw, 28px);
+      font-size: clamp(21px, 1.8vw, 27px);
       font-weight: 600;
       line-height: 1.25;
       white-space: nowrap;
@@ -372,17 +416,16 @@
       min-height: 46px;
     }
 
+    /* FINANCIACIÓN */
+
     .finance-section {
-      padding: 75px 0;
+      padding: 72px 0;
       background: var(--paper);
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
 
     .finance-title {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(30px, 4vw, 42px);
-      font-weight: 500;
       margin-bottom: 12px;
     }
 
@@ -417,8 +460,10 @@
       color: var(--muted);
     }
 
+    /* CONTACTO */
+
     .contact-section {
-      padding: 75px 0;
+      padding: 72px 0;
       background: var(--forest);
       color: var(--cream);
     }
@@ -463,12 +508,16 @@
       color: var(--cream);
     }
 
+    /* ADAPTACIÓN A TABLETS Y CELULARES */
+
     @media (max-width: 950px) {
       .catalog {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .info-grid { grid-template-columns: 1fr; }
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
 
       .section-heading {
         align-items: flex-start;
@@ -478,25 +527,69 @@
 
     @media (max-width: 620px) {
       .nav {
-        padding: 18px 0;
+        padding: 17px 0;
         align-items: flex-start;
         flex-direction: column;
       }
 
-      .nav-links { gap: 15px; }
-      .hero { padding: 72px 0; }
-      .catalog { grid-template-columns: 1fr; }
-      .car-image { height: 240px; }
-      .car-content { padding: 20px; }
-      .street-price strong { font-size: 27px; }
+      .brand {
+        font-size: 16px;
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 58px 0 48px;
+        background-position: center;
+      }
+
+      .hero-brand {
+        gap: 12px;
+      }
+
+      .brand-name {
+        font-size: 10px;
+        letter-spacing: 3px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .catalog {
+        grid-template-columns: 1fr;
+      }
+
+      .car-image {
+        height: 240px;
+      }
+
+      .car-content {
+        padding: 20px;
+      }
+
+      .street-price strong {
+        font-size: 25px;
+      }
 
       .contact-panel {
         align-items: flex-start;
         flex-direction: column;
       }
 
-      .contact-panel .btn { width: 100%; }
-      .footer-inner { flex-direction: column; }
+      .contact-panel .btn {
+        width: 100%;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -505,6 +598,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#inicio">MANUEL BOSSI <span>AUTOS</span></a>
+
       <nav class="nav-links" aria-label="Navegación principal">
         <a href="#vehiculos">Vehículos</a>
         <a href="#financiacion">Financiación</a>
@@ -515,42 +609,59 @@
 
   <main>
     <section class="hero" id="inicio">
-      <div class="hero-brand">
-  <span class="brand-name">FIAT AUTOGENERALI</span>
-  <h1>PRECIOS TRANSPARENTES</h1>
-  <h2>SEGURIDAD GARANTIZADA</h2>
-  <p>VENDEMOS AUTOS, NO PROBLEMAS.</p>
-</div>
+      <div class="container hero-inner">
+
+        <div class="hero-brand">
+          <span class="brand-name">FIAT AUTOGENERALI</span>
+          <h1>PRECIOS TRANSPARENTES</h1>
+          <h2>SEGURIDAD GARANTIZADA</h2>
+          <p class="hero-slogan">VENDEMOS AUTOS, NO PROBLEMAS.</p>
+        </div>
+
+        <p class="hero-description">
           Una forma diferente de elegir tu próximo 0 km.
           Conocé el precio, los gastos y el total puesto en calle
           desde el primer momento.
         </p>
-        <a class="btn btn-gold" href="#vehiculos">EXPLORAR MODELOS</a>
-        <div class="hero-note">Atención personalizada · Venta convencional</div>
+
+        <a class="btn btn-gold" href="#vehiculos">Explorar modelos</a>
+
+        <div class="hero-note">
+          Atención personalizada · Venta convencional
+        </div>
+
       </div>
     </section>
 
     <section class="catalog-section" id="vehiculos">
       <div class="container">
+
         <div class="section-heading">
           <div>
-            <div class="eyebrow">La selezione</div>
+            <div class="eyebrow">Elegí tu próximo Fiat</div>
             <h2>Modelos destacados</h2>
           </div>
-          <p>Todos los importes a la vista. Elegí tu modelo y consultame para negociar tu mejor propuesta.</p>
+
+          <p>
+            Todos los importes a la vista. Elegí tu modelo y consultame
+            para negociar tu mejor propuesta.
+          </p>
         </div>
 
         <div class="catalog">
 
           <!-- FIAT CRONOS -->
+
           <article class="car-card">
             <div class="car-image">
               <span class="model-tag">Fiat · Berlina</span>
+
               <img
                 src="https://centralfiat.dexst.com.ar/wp-content/uploads/2026/04/Cronos_MY26_like_MT_pretovulcano.png"
                 alt="Fiat Cronos Like"
                 loading="lazy"
-                onerror="this.onerror=null;this.src='https://placehold.co/800x500/e9dfcb/292c21?text=Fiat+Cronos';">
+                onerror="this.onerror=null;this.src='https://placehold.co/800x500/e9dfcb/292c21?text=Fiat+Cronos';"
+              >
             </div>
 
             <div class="car-content">
@@ -561,6 +672,7 @@
                 <span>Precio del vehículo</span>
                 <strong>$ 29.865.124</strong>
               </div>
+
               <div class="price-row">
                 <span>Gastos</span>
                 <strong>$ 3.616.050</strong>
@@ -573,24 +685,28 @@
               </div>
 
               <div class="card-actions">
-                <a class="btn btn-dark"
+                <a
+                  class="btn btn-dark"
                   href="https://wa.me/5491168347348?text=Hola%2C%20quiero%20negociar%20el%20precio%20del%20Fiat%20Cronos%20Like.%20El%20total%20publicado%20puesto%20en%20calle%20es%20%2433.481.174.%20%C2%BFQu%C3%A9%20propuesta%20me%20pod%C3%A9s%20ofrecer%3F"
-                  target="_blank" rel="noopener noreferrer">
-                  NEGOCIAR PRECIO
-                </a>
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Negociar precio</a>
               </div>
             </div>
           </article>
 
           <!-- FIAT ARGO -->
+
           <article class="car-card">
             <div class="car-image">
               <span class="model-tag">Fiat · Hatchback</span>
+
               <img
                 src="https://centralfiat.dexst.com.ar/wp-content/uploads/2026/03/Fiat-Argo26-jelly-blanco-banquisa.png"
                 alt="Fiat Argo Drive MT"
                 loading="lazy"
-                onerror="this.onerror=null;this.src='https://placehold.co/800x500/e9dfcb/292c21?text=Fiat+Argo';">
+                onerror="this.onerror=null;this.src='https://placehold.co/800x500/e9dfcb/292c21?text=Fiat+Argo';"
+              >
             </div>
 
             <div class="car-content">
@@ -601,6 +717,7 @@
                 <span>Precio del vehículo</span>
                 <strong>$ 27.150.336</strong>
               </div>
+
               <div class="price-row">
                 <span>Gastos</span>
                 <strong>$ 3.507.962</strong>
@@ -613,24 +730,28 @@
               </div>
 
               <div class="card-actions">
-                <a class="btn btn-dark"
+                <a
+                  class="btn btn-dark"
                   href="https://wa.me/5491168347348?text=Hola%2C%20quiero%20negociar%20el%20precio%20del%20Fiat%20Argo%20Drive%20MT.%20El%20total%20publicado%20puesto%20en%20calle%20es%20%2430.658.298.%20%C2%BFQu%C3%A9%20propuesta%20me%20pod%C3%A9s%20ofrecer%3F"
-                  target="_blank" rel="noopener noreferrer">
-                  NEGOCIAR PRECIO
-                </a>
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Negociar precio</a>
               </div>
             </div>
           </article>
 
           <!-- FIAT PULSE -->
+
           <article class="car-card">
             <div class="car-image">
               <span class="model-tag">Fiat · SUV</span>
+
               <img
                 src="https://centralfiat.dexst.com.ar/wp-content/uploads/2026/03/Fiat_Pulse_Drive_3-4_Gris-Strato.png"
                 alt="Fiat Pulse Drive MT"
                 loading="lazy"
-                onerror="this.onerror=null;this.src='https://placehold.co/800x500/e9dfcb/292c21?text=Fiat+Pulse';">
+                onerror="this.onerror=null;this.src='https://placehold.co/800x500/e9dfcb/292c21?text=Fiat+Pulse';"
+              >
             </div>
 
             <div class="car-content">
@@ -641,6 +762,7 @@
                 <span>Precio del vehículo</span>
                 <strong>$ 31.390.350</strong>
               </div>
+
               <div class="price-row">
                 <span>Gastos</span>
                 <strong>$ 4.281.982</strong>
@@ -653,11 +775,12 @@
               </div>
 
               <div class="card-actions">
-                <a class="btn btn-dark"
+                <a
+                  class="btn btn-dark"
                   href="https://wa.me/5491168347348?text=Hola%2C%20quiero%20negociar%20el%20precio%20del%20Fiat%20Pulse%20Drive%20MT.%20El%20total%20publicado%20puesto%20en%20calle%20es%20%2435.672.332.%20%C2%BFQu%C3%A9%20propuesta%20me%20pod%C3%A9s%20ofrecer%3F"
-                  target="_blank" rel="noopener noreferrer">
-                  NEGOCIAR PRECIO
-                </a>
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Negociar precio</a>
               </div>
             </div>
           </article>
@@ -668,8 +791,10 @@
 
     <section class="finance-section" id="financiacion">
       <div class="container">
-        <div class="eyebrow">Soluzioni su misura</div>
+        <div class="eyebrow">Opciones a tu medida</div>
+
         <h2 class="finance-title">Tu operación, a tu manera.</h2>
+
         <p class="finance-intro">
           Consultá alternativas de financiación para tu próximo Fiat.
           Cada operación se evalúa según el vehículo y las condiciones vigentes.
@@ -678,15 +803,25 @@
         <div class="info-grid">
           <div class="info-card">
             <h3>Financiación</h3>
-            <p>Consultá opciones disponibles y encontrá una alternativa acorde a tu operación.</p>
+            <p>
+              Consultá opciones disponibles y encontrá una alternativa
+              acorde a tu operación.
+            </p>
           </div>
+
           <div class="info-card">
             <h3>Venta convencional</h3>
-            <p>Asesoramiento personalizado para comprar tu 0 km sin plan de ahorro.</p>
+            <p>
+              Asesoramiento personalizado para comprar tu 0 km
+              sin plan de ahorro.
+            </p>
           </div>
+
           <div class="info-card">
             <h3>Negociación personalizada</h3>
-            <p>Escribime para evaluar tu propuesta y conversar sobre el precio.</p>
+            <p>
+              Escribime para evaluar tu propuesta y conversar sobre el precio.
+            </p>
           </div>
         </div>
       </div>
@@ -695,15 +830,21 @@
     <section class="contact-section" id="contacto">
       <div class="container contact-panel">
         <div>
-          <div class="eyebrow">Parliamone</div>
+          <div class="eyebrow">Hablemos</div>
+
           <h2>El próximo paso<br>lo damos juntos.</h2>
-          <p>Contame qué modelo te interesa y conversemos sobre tu propuesta.</p>
+
+          <p>
+            Contame qué modelo te interesa y conversemos sobre tu propuesta.
+          </p>
         </div>
-        <a class="btn btn-gold"
+
+        <a
+          class="btn btn-gold"
           href="https://wa.me/5491168347348?text=Hola%2C%20vi%20tu%20cat%C3%A1logo%20de%20Fiat%200%20km%20y%20quiero%20conversar%20sobre%20una%20propuesta."
-          target="_blank" rel="noopener noreferrer">
-          NEGOCIAR POR WHATSAPP
-        </a>
+          target="_blank"
+          rel="noopener noreferrer"
+        >Negociar por WhatsApp</a>
       </div>
     </section>
   </main>
