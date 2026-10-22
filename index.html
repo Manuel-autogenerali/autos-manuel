@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -198,6 +199,7 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 23px;
+      align-items: stretch;
     }
 
     .car-card {
@@ -215,38 +217,24 @@
       box-shadow: 0 14px 32px rgba(57,41,30,.13);
     }
 
-    /* IMAGEN DEL VEHÍCULO */
     .car-image {
       position: relative;
-      height: 235px;
+      height: 230px;
       overflow: hidden;
       background:
-        linear-gradient(180deg, rgba(244,237,223,.04), rgba(41,44,33,.18)),
-        radial-gradient(ellipse at 70% 25%, #dfc99e 0%, transparent 40%),
-        linear-gradient(125deg, #d8c6a6 0%, #a89a79 45%, #565c43 100%);
+        linear-gradient(180deg, rgba(244,237,223,.05), rgba(41,44,33,.22)),
+        linear-gradient(125deg, #dfceb0, #a49a7c 52%, #525943);
       border-bottom: 3px solid var(--bronze);
     }
 
-    .car-image::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 45%;
-      pointer-events: none;
-      background: linear-gradient(transparent, rgba(41,44,33,.25));
-    }
-
     .car-image img {
-      position: absolute;
       width: 100%;
       height: 100%;
-      inset: 0;
+      display: block;
       object-fit: contain;
-      object-position: center bottom;
+      object-position: center;
       padding: 12px;
-      filter: drop-shadow(0 12px 10px rgba(25,24,18,.25));
+      filter: drop-shadow(0 12px 10px rgba(25,24,18,.22));
       transition: transform .35s ease;
     }
 
@@ -256,15 +244,15 @@
 
     .model-tag {
       position: absolute;
-      top: 17px;
-      left: 18px;
+      top: 15px;
+      left: 15px;
       z-index: 2;
       padding: 7px 10px;
       color: var(--cream);
-      background: rgba(41,44,33,.88);
+      background: rgba(41,44,33,.90);
       border: 1px solid rgba(211,177,123,.7);
       font-size: 9px;
-      letter-spacing: 1.7px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
     }
 
@@ -277,11 +265,11 @@
 
     .model-name {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 32px;
+      font-size: 34px;
       line-height: 1.05;
       font-weight: 500;
       color: var(--forest);
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
 
     .model-edition {
@@ -293,20 +281,12 @@
       margin-bottom: 18px;
     }
 
-    .version-label {
-      color: var(--muted);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
-      margin-bottom: 17px;
-    }
-
     .price-row {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      gap: 12px;
-      padding: 11px 0;
+      gap: 10px;
+      padding: 12px 0;
       border-bottom: 1px solid #e8dece;
     }
 
@@ -343,9 +323,9 @@
       display: block;
       color: #e4c48b;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(23px, 2.1vw, 29px);
+      font-size: clamp(22px, 2vw, 28px);
       font-weight: 600;
-      line-height: 1.2;
+      line-height: 1.25;
       white-space: nowrap;
     }
 
@@ -362,7 +342,10 @@
       gap: 9px;
     }
 
-    .card-actions .btn { width: 100%; }
+    .card-actions .btn {
+      width: 100%;
+      min-height: 46px;
+    }
 
     .finance-section {
       padding: 75px 0;
@@ -456,8 +439,12 @@
     }
 
     @media (max-width: 950px) {
-      .catalog { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .catalog {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .info-grid { grid-template-columns: 1fr; }
+
       .section-heading {
         align-items: flex-start;
         flex-direction: column;
@@ -474,9 +461,9 @@
       .nav-links { gap: 15px; }
       .hero { padding: 72px 0; }
       .catalog { grid-template-columns: 1fr; }
-      .car-image { height: 230px; }
+      .car-image { height: 240px; }
       .car-content { padding: 20px; }
-      .street-price strong { font-size: 28px; }
+      .street-price strong { font-size: 27px; }
 
       .contact-panel {
         align-items: flex-start;
@@ -534,9 +521,9 @@
               <span class="model-tag">Fiat · Berlina</span>
               <img
                 src="https://centralfiat.dexst.com.ar/wp-content/uploads/2026/04/Cronos_MY26_like_MT_pretovulcano.png"
-                alt="Fiat Cronos Like negro, vista tres cuartos"
+                alt="Fiat Cronos Like"
                 loading="lazy"
-                onerror="this.style.display='none'">
+                onerror="this.onerror=null;this.src='https://placehold.co/800x500/e9dfcb/292c21?text=Fiat+Cronos';">
             </div>
 
             <div class="car-content">
@@ -574,9 +561,9 @@
               <span class="model-tag">Fiat · Hatchback</span>
               <img
                 src="https://centralfiat.dexst.com.ar/wp-content/uploads/2026/03/Fiat-Argo26-jelly-blanco-banquisa.png"
-                alt="Fiat Argo Drive MT blanco"
+                alt="Fiat Argo Drive MT"
                 loading="lazy"
-                onerror="this.style.display='none'">
+                onerror="this.onerror=null;this.src='https://placehold.co/800x500/e9dfcb/292c21?text=Fiat+Argo';">
             </div>
 
             <div class="car-content">
@@ -614,9 +601,9 @@
               <span class="model-tag">Fiat · SUV</span>
               <img
                 src="https://centralfiat.dexst.com.ar/wp-content/uploads/2026/03/Fiat_Pulse_Drive_3-4_Gris-Strato.png"
-                alt="Fiat Pulse Drive MT gris"
+                alt="Fiat Pulse Drive MT"
                 loading="lazy"
-                onerror="this.style.display='none'">
+                onerror="this.onerror=null;this.src='https://placehold.co/800x500/e9dfcb/292c21?text=Fiat+Pulse';">
             </div>
 
             <div class="car-content">
@@ -629,4 +616,76 @@
               </div>
               <div class="price-row">
                 <span>Gastos</span>
-                <strong>$ 4.281.
+                <strong>$ 4.281.982</strong>
+              </div>
+
+              <div class="street-price">
+                <span class="label">Total puesto en calle</span>
+                <strong>$ 35.672.332</strong>
+                <small>Precio + gastos informados</small>
+              </div>
+
+              <div class="card-actions">
+                <a class="btn btn-dark"
+                  href="https://wa.me/5491168347348?text=Hola%2C%20quiero%20negociar%20el%20precio%20del%20Fiat%20Pulse%20Drive%20MT.%20El%20total%20publicado%20puesto%20en%20calle%20es%20%2435.672.332.%20%C2%BFQu%C3%A9%20propuesta%20me%20pod%C3%A9s%20ofrecer%3F"
+                  target="_blank" rel="noopener noreferrer">
+                  NEGOCIAR PRECIO
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="finance-section" id="financiacion">
+      <div class="container">
+        <div class="eyebrow">Soluzioni su misura</div>
+        <h2 class="finance-title">Tu operación, a tu manera.</h2>
+        <p class="finance-intro">
+          Consultá alternativas de financiación para tu próximo Fiat.
+          Cada operación se evalúa según el vehículo y las condiciones vigentes.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Financiación</h3>
+            <p>Consultá opciones disponibles y encontrá una alternativa acorde a tu operación.</p>
+          </div>
+          <div class="info-card">
+            <h3>Venta convencional</h3>
+            <p>Asesoramiento personalizado para comprar tu 0 km sin plan de ahorro.</p>
+          </div>
+          <div class="info-card">
+            <h3>Negociación personalizada</h3>
+            <p>Escribime para evaluar tu propuesta y conversar sobre el precio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contacto">
+      <div class="container contact-panel">
+        <div>
+          <div class="eyebrow">Parliamone</div>
+          <h2>El próximo paso<br>lo damos juntos.</h2>
+          <p>Contame qué modelo te interesa y conversemos sobre tu propuesta.</p>
+        </div>
+        <a class="btn btn-gold"
+          href="https://wa.me/5491168347348?text=Hola%2C%20vi%20tu%20cat%C3%A1logo%20de%20Fiat%200%20km%20y%20quiero%20conversar%20sobre%20una%20propuesta."
+          target="_blank" rel="noopener noreferrer">
+          NEGOCIAR POR WHATSAPP
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-brand">MANUEL BOSSI AUTOS</span>
+      <span>Precios y condiciones sujetos a confirmación al momento de la operación.</span>
+    </div>
+  </footer>
+</body>
+</html>
